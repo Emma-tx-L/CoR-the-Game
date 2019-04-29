@@ -8,7 +8,6 @@ public class SpriteAC : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
         anim = GetComponent<Animator>();
 	}
 	

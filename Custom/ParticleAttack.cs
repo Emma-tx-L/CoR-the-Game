@@ -18,13 +18,9 @@ public class ParticleAttack : MonoBehaviour {
     Animator playerAnim;
     public Animator daggerAnim;
 
-	// Use this for initialization
 	void Start () {
-
         timer = 0f;
-
         playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-
     }
 	
 	// Update is called once per frame
@@ -41,7 +37,6 @@ public class ParticleAttack : MonoBehaviour {
 
                     charges = 0;
                 }
-
             }
 
             else
@@ -56,16 +51,13 @@ public class ParticleAttack : MonoBehaviour {
             daggerAnim.SetTrigger("ArrowAttack");
 
             timer = cd;
-
         }
+
         else if (timer > 0)
         {
             timer -= Time.deltaTime;
         }
-		
 	}
-
-
 
     void OnParticleCollision(GameObject other)
     {
@@ -76,8 +68,6 @@ public class ParticleAttack : MonoBehaviour {
         {
             enemyHealth.TakeDamage(orbDamage, other.transform.position); //enemy take damage
             enemyMove.Interrupt();
-
         }
-
     }
 }

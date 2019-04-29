@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class CircleSpell : MonoBehaviour {
 
-
-
     public ParticleSystem baseCircle;
     public ParticleSystem circleRise;
     public ParticleSystem sparklesRise;
@@ -19,23 +17,17 @@ public class CircleSpell : MonoBehaviour {
 
     Rigidbody enemyRB;
 
-
-
-    // Use this for initialization
     void Start() {
-    
         spellCountdown = spellDuration;
         spellDamagePerTick = 15;
 
         baseCircle.Play();
         circleRise.Play();
         sparklesRise.Play();
-
     }
 
-    // Update is called once per frame
-    void Update() {
 
+    void Update() {
         if (spellCountdown <= 0)
         {
             Destroy(gameObject, 3); //after a delay, destroy spell
@@ -48,19 +40,14 @@ public class CircleSpell : MonoBehaviour {
             collider.radius = 2.5f;
 
             spellCountdown -= Time.deltaTime; 
-
         }
 
         else
         {
             spellCountdown -= Time.deltaTime; //decrement duration per s as long as object is alive 
         }
-
-
     }
 
-
-    
     //spell is present, damage and stun enemies in trigger range
     private void OnTriggerStay(Collider other)
     {
@@ -69,9 +56,6 @@ public class CircleSpell : MonoBehaviour {
         Animator enemyanim = other.GetComponent<Animator>();
         NavMeshAgent enemyNav = other.GetComponent<NavMeshAgent>();
         
-        
-
-
         if (enemyHealth != null && enemyMovement != null) //if spell is alive and we hit an enemy
         {
             enemyHealth.TakeDamage(spellDamagePerTick * Time.deltaTime, other.transform.position); //enemy take damage
@@ -86,7 +70,6 @@ public class CircleSpell : MonoBehaviour {
                 enemyanim.SetBool("IsStunned", true);
                 //enemyRB.isKinematic = false;
                 //enemyRB.AddForce(toCenter, ForceMode.Impulse);
-
             }
 
             else
@@ -96,11 +79,8 @@ public class CircleSpell : MonoBehaviour {
                 enemyMovement.enabled = true;
                 enemyanim.SetBool("IsStunned", false);
             }
-            
         } 
-
     }
-
 }
 
 

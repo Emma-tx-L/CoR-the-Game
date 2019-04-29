@@ -10,13 +10,8 @@ public class SpriteRefManager : MonoBehaviour {
     public GameObject Pride;
     public GameObject Zephir;
 
-
-
-    // Use this for initialization
     void Awake () {
-
         spritesRef = this;
-		
 	}
 	
     public GameObject FindCharacter(string name)

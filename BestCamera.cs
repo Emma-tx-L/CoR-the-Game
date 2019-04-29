@@ -45,9 +45,8 @@ public class BestCamera : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-
-            x += Input.GetAxis("Mouse X") * mouseXSpeedMod;
-            y += Input.GetAxis("Mouse Y") * -mouseYSpeedMod;
+        x += Input.GetAxis("Mouse X") * mouseXSpeedMod;
+        y += Input.GetAxis("Mouse Y") * -mouseYSpeedMod;
 
         y = ClampAngle(y, 0, 45);
         Quaternion rotation = Quaternion.Euler(y, x, 0);
@@ -57,13 +56,8 @@ public class BestCamera : MonoBehaviour
         correctedDistance = desireDistance;
 
         Vector3 position = CameraTarget.position - (rotation * Vector3.forward * desireDistance);
-
         Vector3 cameraTargetPosition = new Vector3(CameraTarget.position.x, CameraTarget.position.y + cameraTargetHeight, CameraTarget.position.z);
-
-
-
-
-
+  
       RaycastHit collisionHit;
       bool isCorrected = false;
         if (Physics.Linecast(cameraTargetPosition, position, out collisionHit, layerMask))
@@ -73,7 +67,6 @@ public class BestCamera : MonoBehaviour
             isCorrected = true;
         }
 
-
         currentDistance = !isCorrected || correctedDistance > currentDistance ? Mathf.Lerp(currentDistance, correctedDistance, Time.deltaTime * ZoomRate) : correctedDistance;
 
         //currentDistance = correctedDistance > currentDistance ? Mathf.Lerp(currentDistance, correctedDistance, Time.deltaTime * ZoomRate) : correctedDistance;
@@ -82,9 +75,6 @@ public class BestCamera : MonoBehaviour
 
         transform.rotation = rotation;
         transform.position = position;
-
-
-
     }
 
     private static float ClampAngle(float angle, float min, float max)

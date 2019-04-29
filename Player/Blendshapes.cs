@@ -6,35 +6,27 @@ public class Blendshapes : MonoBehaviour {
 
     //attach this to the body part with blendshapes (probably the Head)
 
-
     int newBlendIndex;
 
     string currBlend = "";
     int currBlendIndex;
 
-
     Mesh mesh;
     SkinnedMeshRenderer meshR;
     int blendShapeCount;
 
-
     void Start () {
-
         meshR = GetComponent<SkinnedMeshRenderer>();
 
         mesh = GetComponent<SkinnedMeshRenderer>().sharedMesh;
         blendShapeCount = mesh.blendShapeCount;
-
     } 
 
-    
     public void BlendShape(string passedBlend)
     {
-
         //if this is the first pose in the story, and there hasn't been a previous yet
         if (currBlend == "" && passedBlend != null)
         {
-
             newBlendIndex = mesh.GetBlendShapeIndex(passedBlend);
 
             meshR.SetBlendShapeWeight(newBlendIndex, 100);
@@ -56,11 +48,8 @@ public class Blendshapes : MonoBehaviour {
             //update current face
             currBlend = passedBlend;
             currBlendIndex = newBlendIndex;
-
-
         }
     }
-
 
     //resets all blendshapes to zero
     public void ResetShapes()
@@ -73,6 +62,4 @@ public class Blendshapes : MonoBehaviour {
         //reinitialize
         currBlend = "";
     }
-	
-
 }

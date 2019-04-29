@@ -6,7 +6,6 @@ public class EnemyOneShot : MonoBehaviour
 {
     public int attackDamage = 10;
 
-
     Animator anim;
     GameObject player;
     PlayerHealth playerHealth;
@@ -20,7 +19,6 @@ public class EnemyOneShot : MonoBehaviour
     //bool playerInRange;
     //float timer;
 
-
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -30,7 +28,6 @@ public class EnemyOneShot : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider>();
         enemyMovement = GetComponent<EnemyMovement>();
     }
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -42,7 +39,6 @@ public class EnemyOneShot : MonoBehaviour
         }
     }
 
-
     void Update()
     {
         if (playerHealth.currentHealth <= 0)
@@ -50,7 +46,6 @@ public class EnemyOneShot : MonoBehaviour
             anim.SetTrigger("PlayerDead");
         }
     }
-
 
     void Attack()
     {

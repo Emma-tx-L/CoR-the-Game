@@ -27,12 +27,10 @@ public class DialogueManager : MonoBehaviour
     GameObject button;
     Image panel;
 
-
     //for choosing options
     public bool choosing;
     List<Button> buttons = new List<Button>();
     public static string[] optionCommands;
-
 
     //for ending dialogue
     private StoryEnder ender;
@@ -85,10 +83,7 @@ public class DialogueManager : MonoBehaviour
         instaShow = false;
         choosing = false;
         dialogueBox.text = "";
-
-       
     }
-
 
     // Update is called once per frame
     void Update()
@@ -116,11 +111,8 @@ public class DialogueManager : MonoBehaviour
             //this resets the text inside the box itself, REQUIRED
             dialogueBox.text = "";
 
-
             //THEN end, which will also disable this script
             ender.EndStory();
-
-
         }
 
         //if (!isTyping && !choosing && !storyAnim.GetBool("CanNext"))
@@ -136,31 +128,21 @@ public class DialogueManager : MonoBehaviour
             //show the current line
             ShowDialogue();
             storyAnim.Play("DialogueClick");
-
         }
 
         //this can only be called after the first if condition is called
         //ie. ShowDialogue has been called and lineNum has already been advanced
         else if (Input.GetMouseButtonDown(0) && !choosing && isTyping)
         {
-
             instaShow = true;
             storyAnim.Play("DialogueClick");
-
-
         }
 
-
         nameBox.text = characterName;
-
-
     }
-
 
     public void ShowDialogue()
     {
-        //MUST reset images (turn existing ones grey) before getting the new line
-
         storyAnim.Play("NextButtonStop");
         storyAnim.SetBool("CanNext", false);
         ResetImages();
@@ -173,7 +155,6 @@ public class DialogueManager : MonoBehaviour
             //StartCoroutine(PlayAudio(dialogue));
             lineNum++;
         }
-
     }
 
     IEnumerator PlayAudio(string message)
@@ -196,7 +177,6 @@ public class DialogueManager : MonoBehaviour
             }
             yield return new WaitForSecondsRealtime(letterPause *2);
         }
-
     }
 
     IEnumerator TypeText(string message)
@@ -217,7 +197,6 @@ public class DialogueManager : MonoBehaviour
                 instaShow = false;
                 isTyping = false;
 
-
                 dialogueBox.text = dialogue;
                 storyAnim.SetBool("CanNext", true);
                 yield break;
@@ -233,12 +212,10 @@ public class DialogueManager : MonoBehaviour
 
         isTyping = false;
         storyAnim.SetBool("CanNext", true);
-
     }
 
         public void ClearButtons()
     {
-
         for (int i = 0; i < buttons.Count; i++)
         {
             Debug.Log("clearing buttons");
@@ -255,7 +232,6 @@ public class DialogueManager : MonoBehaviour
 
     void ParseLine()
     {
-
         //NOT choosing = NORMAL DIALOGUE
         if (parser.GetName(lineNum) != "Choose")
         {
@@ -268,13 +244,11 @@ public class DialogueManager : MonoBehaviour
             emoji = parser.GetEmoji(lineNum);
 
             DisplayImages();
-
         }
 
         //if its a player talking, then get the options and make buttons for them
         else
         {
-
             choosing = true;
 
             characterName = "";
@@ -323,10 +297,7 @@ public class DialogueManager : MonoBehaviour
 
             //add button to our list of buttons for removal later
             buttons.Add(b);
-
         }
-
-
     }
 
     //this is called with the previous line, aka BEFORE we parse the new line
@@ -334,14 +305,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (characterName == "null")
         {
-
             return;
-
         }
 
         else if (characterName == "???")
         {
-
         }
 
          else if (characterName != "")
@@ -353,8 +321,6 @@ public class DialogueManager : MonoBehaviour
             {
                 ParticleSystem emojiEffect = character.transform.Find("Emoji/" + emoji).gameObject.GetComponent<ParticleSystem>();
                 emojiEffect.Stop();
-
-
             }
 
             //string currpose = pose;
@@ -375,13 +341,8 @@ public class DialogueManager : MonoBehaviour
             {
                 blinker.enabled = true;
             }
-
-
-
         }
     }
-
-
 
     void DisplayImages()
     {
@@ -401,7 +362,6 @@ public class DialogueManager : MonoBehaviour
 
         else if (characterName == "???" || characterName == "")
         {
-
         }
 
         else if (characterName != "")
@@ -457,16 +417,10 @@ public class DialogueManager : MonoBehaviour
 
             if (emoji != "null" && emoji != "")
             {
-
                 GameObject emojiHolder = character.transform.Find("Emoji").gameObject;
                 ParticleSystem emojiEffect = emojiHolder.transform.Find(emoji).gameObject.GetComponent<ParticleSystem>();
                 emojiEffect.Play();
-
-
             }
-
-
         }
     }
-
 }

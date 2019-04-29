@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyMaterial : MonoBehaviour
 {
-
     //Color emitcolor;
 
     Material enemymat;
@@ -16,20 +15,13 @@ public class EnemyMaterial : MonoBehaviour
     //Color purple = new Color(39f, 0f, 255f);
     //Color blue = new Color(0f, 166f, 255f);
 
-    // Use this for initialization
     void Start()
     {
-
         enemymat = GetComponent<Renderer>().material;
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-
-
         if ((enemyHealth.currentHealth / enemyHealth.startingHealth) <= 0.05)
         {
             //emitcolor = Color.Lerp(blue, Color.black, Mathf.PingPong(t, lerpSpeed));
@@ -58,9 +50,5 @@ public class EnemyMaterial : MonoBehaviour
             enemymat.SetColor("_MKGlowTexColor", Color.cyan);
 
         }
-
-
-
-
     }
 }

@@ -8,8 +8,6 @@ public class RefManager : MonoBehaviour {
 
     public static RefManager refManager;
 
-
-
     public Camera cam;
 
     public Image blinkCD;
@@ -26,12 +24,9 @@ public class RefManager : MonoBehaviour {
 
     public GameObject choiceButton;
 
-
 	// Use this for initialization
 	void Awake () {
         refManager = this;
 		
 	}
-	
-
 }

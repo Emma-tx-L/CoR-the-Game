@@ -22,14 +22,10 @@ public class FXAttack : MonoBehaviour {
         //Debug.Log(e.HitCollider.name); //a collided collider :)
         PlayerHealth playerHealth = e.HitGameObject.GetComponent<PlayerHealth>();
 
-
         if (playerHealth != null && playerHealth.currentHealth > 0)
         {
             playerHealth.TakeDamage(damage);
 
         }
-
     }
-
-
 }

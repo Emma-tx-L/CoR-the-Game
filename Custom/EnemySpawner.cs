@@ -33,7 +33,6 @@ public class EnemySpawner : MonoBehaviour
         InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 
-
     //void MoveSpawn()
     //{
     //    x = player.transform.position.x + range;

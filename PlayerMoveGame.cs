@@ -14,7 +14,6 @@ public class PlayerMoveGame : MonoBehaviour
  
     private Camera cam;
 
-
     public float blinkdistance;
     public float blinkCD;
     float currentCD;
@@ -39,7 +38,6 @@ public class PlayerMoveGame : MonoBehaviour
         blinkCDImage = instance.blinkCD;
         Cursor.visible = false;
     }
-
 
     void FixedUpdate()
     {
@@ -78,7 +76,6 @@ public class PlayerMoveGame : MonoBehaviour
 
     }
 
-
     void Blink(float v, float h)
     {
         Vector3 forwardDir = new Vector3(cam.transform.forward.x, 0f, cam.transform.forward.z);
@@ -100,7 +97,6 @@ public class PlayerMoveGame : MonoBehaviour
         }
         else
         {
-
             //move player rigidbody forward by the blinkdistance
             playerRigidbody.MovePosition(playerRigidbody.transform.position + (blinkdistance * direction));
 
@@ -113,7 +109,6 @@ public class PlayerMoveGame : MonoBehaviour
 
     }
 
-    
         void Move(float v, float h)
     {
         //store the camera forward and right vectors
@@ -141,19 +136,14 @@ public class PlayerMoveGame : MonoBehaviour
 
                 else if (v >= 0)
                     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), rotateSpeed);
-
             }
-
-
         }
 
         else if (Input.GetButton("Vertical"))
         {
-
             movement = forwardDir;
             movement = movement.normalized * v * speed * Time.deltaTime;
             playerRigidbody.MovePosition(transform.position + movement);
-
 
             if (v != 0f || h != 0f) //when moving, change player's rotation based on camera
             {
@@ -161,12 +151,10 @@ public class PlayerMoveGame : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(forwardDir), rotateSpeed);
 
             }
-
         }
 
         else if (Input.GetButton("Horizontal"))
         {
-
             movement = rightDir;
             movement = movement.normalized * h * speed * Time.deltaTime;
             playerRigidbody.MovePosition(transform.position + movement);
@@ -175,12 +163,9 @@ public class PlayerMoveGame : MonoBehaviour
             {
                 //face inward when moving left/right
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(-movement), rotateSpeed);
-
             }
         }
     }
-
-
 
     void Animating(float v, float h)
     {

@@ -14,17 +14,14 @@ public class PlayerBehaviourManager : MonoBehaviour {
 
 
 	void Start () {
-
         health = GetComponent<PlayerHealth>();
         circlespell = GetComponent<PlayerAttacks>();
         movement = GetComponent<PlayerMoveGame>();
-
 	}
 
     public void DisableMovement()
     {
         movement.enabled = false;
-
     }
 
     public void DisableFire()
@@ -93,5 +90,4 @@ public class PlayerBehaviourManager : MonoBehaviour {
             dagger.SetActive(false);
         }
     }
-	
 }

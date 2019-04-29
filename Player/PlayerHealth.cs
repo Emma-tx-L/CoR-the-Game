@@ -38,10 +38,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
 
         playerManager = GetComponent<PlayerBehaviourManager>();
-
-
     }
-
 
     void Update()
     {
@@ -55,7 +52,6 @@ public class PlayerHealth : MonoBehaviour
         }
         damaged = false;
     }
-
 
     public void TakeDamage(int amount)
     {
@@ -75,7 +71,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-
     private void Death()
     {
         isDead = true;
@@ -86,7 +81,5 @@ public class PlayerHealth : MonoBehaviour
         zanim.SetTrigger("Die");
 
         playerManager.DisableAll();
-
     }
-
 }

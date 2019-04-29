@@ -5,11 +5,8 @@ public class GameOverManager : MonoBehaviour
 {
     private PlayerHealth playerHealth;
     private PlayerMoveGame playerMove;
-
     private RefManager instance;
-
     private BestCamera cam;
-
     private GameObject player;
 
     Animator anim;
@@ -33,7 +30,6 @@ public class GameOverManager : MonoBehaviour
 
         //score = instance.HUDCanvas.transform.Find("ScoreText").gameObject.GetComponent<Text>();
     }
-
 
     void Update()
     {
@@ -63,12 +59,10 @@ public class GameOverManager : MonoBehaviour
 
     void UpdateGameControl(Text score)
     {
-
         //string scoreVal = score.text.Replace("Score: ", "");
         //int newScore = int.Parse(scoreVal);
 
         int newScore = ScoreManager.score;
-
 
         if (newScore > GameControl.highScore)
         {

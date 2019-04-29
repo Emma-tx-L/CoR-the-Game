@@ -30,7 +30,6 @@ public class PlayerFire : MonoBehaviour
 
         manaSlider.maxValue = maxMana;
         manaSlider.value = maxMana;
-
      }
 
     private void Fire()
@@ -40,13 +39,10 @@ public class PlayerFire : MonoBehaviour
         attackParticles.Play();
         manaSlider.value -= manaPerTick;
         firing = true;
-
-
     }
 
     private void OnTriggerStay(Collider other)
     {
-        
         EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
 
         //if shooting and hit object has an enemy health script
@@ -60,8 +56,8 @@ public class PlayerFire : MonoBehaviour
 
             manaSlider.value -= manaPerTick;
             firing = true;
-
         }
+
         else
         {
             attackParticles.Stop();
@@ -78,7 +74,6 @@ public class PlayerFire : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-
             if (manaSlider.value > manaPerTick)
             {
                 Fire();
@@ -97,6 +92,5 @@ public class PlayerFire : MonoBehaviour
         }
 
         zAnim.SetBool("Firing", firing);
-
     }
 }

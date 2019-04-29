@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EyeBlink : MonoBehaviour
 {
-
     //this should run independent of time scale, relevant for UI Sprites
     //attach this to the head, which has the EyeBothClose blendshape
 
@@ -27,13 +26,10 @@ public class EyeBlink : MonoBehaviour
         blinkIn = mesh.GetBlendShapeIndex("EyeBothClose");
 
         CD = waitSeconds;
-
     }
 
     void Update()
     {
-
-
         if (blinking)
         {
             //if brand new blink is starting, turn on the eyeclose blendshape
@@ -60,7 +56,6 @@ public class EyeBlink : MonoBehaviour
             else if (timeClose <= 0f && closed)
             {
                 blinking = false;
-
             }
 
         }
@@ -78,8 +73,6 @@ public class EyeBlink : MonoBehaviour
         }
     }
 
-
-
     void Blink()
     {
         //reinitialize
@@ -90,7 +83,6 @@ public class EyeBlink : MonoBehaviour
         //start a new blink
         closed = false;
         blinking = true;
-
     }
 }
 

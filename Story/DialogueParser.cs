@@ -46,7 +46,6 @@ public class DialogueParser : MonoBehaviour
     public void ResetParser()
     {
         lines = new List<DialogueLine>();
-
     }
 
 
@@ -67,12 +66,11 @@ public class DialogueParser : MonoBehaviour
 
         foreach (string line in rawLines)
         {
-           
                 //sort the pieces of each line in the array
                 lineData = line.Split(';');
 
                 //put each of those pieces into a new dialogue line:
-                // 0 = name, 1 = dialogue, 2 = pose, 3 = face, 4 = options
+                // 0 = name, 1 = dialogue, 2 = pose, 3 = face, 4 = emoji, 5 = options
                 lineEntry = new DialogueLine(lineData[0], lineData[1], lineData[2], lineData[3], lineData[4], lineData[5]);
 
                 //add our newly constructed DialogueLine to the list
@@ -145,5 +143,4 @@ public class DialogueParser : MonoBehaviour
         }
         return "";
     }
-
 }

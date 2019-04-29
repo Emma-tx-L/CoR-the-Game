@@ -10,7 +10,6 @@ public class EnemyHealth : MonoBehaviour
     //public AudioClip deathClip;
     public ParticleSystem deathPS;
 
-
     Animator anim;
     //AudioSource enemyAudio;
     ParticleSystem hitParticles;
@@ -30,7 +29,6 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = startingHealth;
 
         anim.SetTrigger("Spawned");
-
     }
 
 
@@ -43,7 +41,6 @@ public class EnemyHealth : MonoBehaviour
 
         timer += Time.deltaTime;
     }
-
 
     public void TakeDamage(float amount, Vector3 hitPoint)
     {
@@ -65,7 +62,6 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-
     void Death()
     {
         isDead = true;
@@ -81,7 +77,6 @@ public class EnemyHealth : MonoBehaviour
         //enemyAudio.clip = deathClip;
         //enemyAudio.Play();
     }
-
 
     public void StartSinking()
     {

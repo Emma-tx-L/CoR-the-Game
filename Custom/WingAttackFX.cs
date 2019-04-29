@@ -8,7 +8,6 @@ public class WingAttackFX : MonoBehaviour {
 
     void OnParticleCollision(GameObject other)
     {
-
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
 
         if (playerHealth != null)

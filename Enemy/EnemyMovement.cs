@@ -14,7 +14,6 @@ public class EnemyMovement : MonoBehaviour
     //public float stunTime;
     //float stunCounter;
 
-
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -24,7 +23,6 @@ public class EnemyMovement : MonoBehaviour
         enemyRB = GetComponent<Rigidbody>();
         enemyAC = GetComponent<Animator>();
     }
-
 
     void Update()
     {

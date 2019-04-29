@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ChoiceButton : MonoBehaviour
 {
-
     public string option;
     DialogueManager dialogueManager;
     GameControl control;
@@ -30,7 +29,6 @@ public class ChoiceButton : MonoBehaviour
         option = newOption;
     }
     
-
     public void ParseOption()
     {
         //option is retrieved from optionCommand in DialogueManager and looks like this:
@@ -45,7 +43,6 @@ public class ChoiceButton : MonoBehaviour
         int affectionChange = int.Parse(parsedOption[1]);
         af.ChangeAffection(partnerName, affectionChange);
 
-
         int goToLineNumber = int.Parse(parsedOption[2]);
 
         dialogueManager.choosing = false;
@@ -54,9 +51,5 @@ public class ChoiceButton : MonoBehaviour
         //pass everything back to DialogueManager so we update the UI
         DialogueManager.lineNum = goToLineNumber;
         dialogueManager.ShowDialogue();
-
-
     }
-
-    
 }

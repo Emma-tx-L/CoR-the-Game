@@ -15,7 +15,6 @@ public class WingAttack : MonoBehaviour
     bool playerInRange;
     float timer;
 
-
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -23,7 +22,6 @@ public class WingAttack : MonoBehaviour
         enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();
     }
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -33,7 +31,6 @@ public class WingAttack : MonoBehaviour
         }
     }
 
-
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject == player)
@@ -41,7 +38,6 @@ public class WingAttack : MonoBehaviour
             playerInRange = false;
         }
     }
-
 
     void Update()
     {
@@ -57,7 +53,6 @@ public class WingAttack : MonoBehaviour
             anim.SetTrigger("PlayerDead");
         }
     }
-
 
     void Attack()
     {

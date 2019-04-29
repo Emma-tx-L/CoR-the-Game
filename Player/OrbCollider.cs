@@ -8,9 +8,7 @@ public class OrbCollider : MonoBehaviour {
     private float damage = 20f;
     PlayerAttacks playerAttack;
 
-	// Use this for initialization
 	void Start () {
-
         playerAttack = GetComponentInParent<PlayerAttacks>();
 	}
 
@@ -21,7 +19,6 @@ public class OrbCollider : MonoBehaviour {
         if (enemyHealth != null && canHit && playerAttack.orbOut)
         {
             enemyHealth.TakeDamage(damage, other.transform.position);
-
         }
     }
 }

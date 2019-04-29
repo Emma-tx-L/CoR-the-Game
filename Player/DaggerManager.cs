@@ -21,23 +21,19 @@ public class DaggerManager : MonoBehaviour {
     float timer = 0f;
 
 	void Start () {
-
         playerManager = GetComponentInParent<PlayerBehaviourManager>();
         timer = cooldown;
         
         ActivateBow();
-
 	}
 
     void Update()
     {
-
         if (timer <= 0f)
         {
             if (Input.GetButton("1"))
             {
                 ActivateBow();
-
             }
             //else if (Input.GetButton("2"))
             //{
@@ -53,7 +49,6 @@ public class DaggerManager : MonoBehaviour {
         {
             timer -= Time.deltaTime;
         }
-        
     }
 
     void ActivateBow()
@@ -109,5 +104,4 @@ public class DaggerManager : MonoBehaviour {
     {
         orbSpellFX.Play();
     }
-	
 }
