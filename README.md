@@ -4,7 +4,7 @@ Visual novel, 3rd-person hack-and-slash-style game.
 
 ***Incomplete/In-Progress!***  
 \
-**This repository does not contains some scripts from the full project.**
+**This repository only contains some scripts from the full project.**
 - assets are not included
 - some scripts are not included  
 
