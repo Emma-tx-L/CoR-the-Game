@@ -16,10 +16,26 @@ Dialogue + game demo (Scene 0) [here](https://drive.google.com/open?id=132XmOa2-
 
 ## Screenshots
 
-3-stage arrow attack (3rd shot is fancy)  
+3-stage arrow attack - 3rd shot does more damage  
 <img src="gifs/arrow-attack.gif" />
 
-Camera Raycasting   
+Zephir's fire attack - mana dependent (mana bar not shown)   
+<img src="gifs/fire-attack.gif" width="426.5" height="270" />
+
+Orb attack - animated mesh with collider  
+<img src="gifs/orb-attack.gif" />
+
+Circle spell (and player taking damage) - temporarily stuns mobs  
+<img src="gifs/circle-spell.gif" width="414.9" height="324.5" />
+
+Blink movement skill - blinks in direction of movement input, terrain sensitive    
+<img src="gifs/blink.gif" width="414.9" height="324.5" />
+
+Dialogue - click to advance, click again to display all text; 3D sprites have separate animations and expressions  
+<img src="gifs/dialogue-sample.gif" />
+
+
+Camera Raycasting - corrects for (layer-specified) objects that appear between the camera and player  
 <img src="gifs/cam-raycasting.gif" width="495.5" height="408" />
 
 
@@ -30,8 +46,9 @@ Camera Raycasting
 - player movement is relative to camera
 - player faces center of the screen when turning left/right for ease of aiming, but blinks in the direction of movement input
 
+
 ### Known Issues/To-Do's
 - emoji glow in built version is obnoxiously opaque
 - need to update the game-only demo's ~~ugly~~ start screen art
 - player has strange invulnerability frames when taking continuous damage from many mobs
-- composing background music, will add ~~eventually~~ soon
+- composing background music, will add in the future
