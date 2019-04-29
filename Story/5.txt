@@ -1,0 +1,13 @@
+???;   .  .  .  .  .  .  .  ;null;null;;
+Pride;If this isn't the right orb.  .  .;P_Angry;FaceAngry;Huff;
+???;   .  .  .  .  .  .  .  ;null;null;;
+Pride;I swear, when I find you.  .  .  ;P_Angry;FaceAngry;Huff;
+Zephir;Finally!;ZephirFancy;null;Sparkles;
+Zephir;And just in time! Quick, they're coming!;ZephirEnterAttack;null;;
+Pride;What? What are you talking about   --;P_StartleMotion;Startled;;
+Zephir;Be quiet and listen for once, brat! I can help you but I can't do it all myself!;ZephirFancy;null;;
+Zephir;For now, channel mana into me using right-click.;ZephirEnterAttack;null;;
+Zephir;We'll go from there once you've recovered some strength.;null;null;;
+Pride;Who're you calling a brat?!?! Y-You're just a midget lizard!;P_Sore;FaceAngry;Angry;
+???;for testing: Space to shoot -- Left Alt to place trap -- Left Shift to blink;null;null;;
+null;!EndStory!;null;null;;
