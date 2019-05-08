@@ -4,13 +4,20 @@ Visual novel, 3rd-person hack-and-slash-style game.
 
 ***Incomplete/In-Progress!***  
 \
-**This repository only contains some scripts from the full project.**
+**This repository only contains some sample scripts from the full project.**
 - assets are not included
 - some scripts are not included  
 
+### Updated 05-07-2019 v0.91 Game-only demo
+- updated game-only demo's start screen art
+<img src="gifs/start-screen-pic.gif" />
 
-## The current build is v0.9   
-Game-only demo [here](https://drive.google.com/open?id=1t1Y134n-ovOov-rjLZBEe8Pklm06wBMt)  
+- added ranged enemy
+<img src="gifs/wing-enemy.gif" />
+
+
+## The current build is v0.91   
+Game-only demo [here](https://drive.google.com/open?id=1JPWmxVyJGuWGdwMgWp4Vrh7i3Emxoiqo)  
 Dialogue + game demo (Scene 0) [here](https://drive.google.com/open?id=132XmOa2-Et1H5dhK19P1-VTv4pi3dTra)  
 
 
@@ -49,6 +56,7 @@ Camera Raycasting - corrects for (layer-specified) objects that appear between t
 
 ### Known Issues/To-Do's
 - emoji glow in built version is obnoxiously opaque
-- need to update the game-only demo's ~~ugly~~ start screen art
 - player has strange invulnerability frames when taking continuous damage from many mobs
 - composing background music, will add in the future
+- wing mobs appear to take damage from circle spell when outside of its range
+- up-left and up-right face direction is unintuitive; need to correct to face the opposite way (inwards)
